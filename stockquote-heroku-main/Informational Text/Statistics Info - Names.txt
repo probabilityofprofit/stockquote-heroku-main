@@ -1,0 +1,81 @@
+Valuation Measures
+marketCap
+enterpriseValue
+trailingPE
+forwardPE
+pegRatio
+priceToSalesTrailing12Months
+priceToBook
+Enterprise Value/Revenue = enterpriseValue/totalRevenue
+Enterprise Value/EBITDA = enterpriseValue/EBITDA
+
+Financial Highlights
+Fiscal Year
+lastFiscalYearEnd
+mostRecentQuarter
+
+Profitability
+profitMargins
+operatingMargins
+
+Management Effectiveness
+returnOnAssets
+returnOnEquity
+
+Income Statement
+totalRevenue
+revenuePerShare
+revenueGrowth
+grossProfits
+ebitda
+netIncomeToCommon
+trailingEps:
+earningsQuarterlyGrowth
+
+Balance Sheet
+totalCash
+totalCashPerShare
+totalDebt
+debtToEquity
+currentRatio
+bookValue
+
+Cash Flow Statement
+operatingCashflow
+freeCashflow
+
+Trading Information
+Stock Price History
+beta
+52WeekChange
+SandP52WeekChange
+fiftyTwoWeekHigh
+fiftyTwoWeekLow
+fiftyDayAverage
+twoHundredDayAverage
+
+Share Statistics
+averageVolume
+averageVolume10days
+sharesOutstanding: 
+impliedSharesOutstanding
+floatShares
+heldPercentInsiders
+heldPercentInstitutions
+sharesShort
+shortRatio
+shortPercentOfFloat
+sharesPercentSharesOut
+sharesShortPriorMonth
+
+Dividends & Splits
+dividendRate
+dividendYield
+trailingAnnualDividendRate
+trailingAnnualDividendYield
+fiveYearAvgDividendYield
+payoutRatio
+lastDividendDate
+exDividendDate
+lastSplitFactor
+lastSplitDate

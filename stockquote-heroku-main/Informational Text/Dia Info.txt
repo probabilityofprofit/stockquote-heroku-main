@@ -1,0 +1,52 @@
+longBusinessSummary: The Trust’s Portfolio consists of substantially all of the component common stocks that comprise the DJIA, which are weighted in accordance with the terms of the Trust Agreement.     
+maxAge: 86400
+priceHint: 2
+previousClose: 376.84
+open: 374.8
+dayLow: 373.76
+dayHigh: 375.6
+regularMarketPreviousClose: 376.84
+regularMarketOpen: 374.8
+regularMarketDayLow: 373.76
+regularMarketDayHigh: 375.6
+trailingPE: 22.207365
+volume: 3115445
+regularMarketVolume: 3115445
+averageVolume: 3876714
+averageVolume10days: 4099870
+averageDailyVolume10Day: 4099870
+bid: 374.93
+ask: 375.05
+bidSize: 900
+askSize: 800
+yield: 0.018099999
+totalAssets: 32287629312
+fiftyTwoWeekLow: 314.97
+fiftyTwoWeekHigh: 377.82
+fiftyDayAverage: 357.4874
+twoHundredDayAverage: 344.43866
+trailingAnnualDividendRate: 5.62
+trailingAnnualDividendYield: 0.014913491
+navPrice: 376.83917
+currency: USD
+category: Large Value
+ytdReturn: -7.96e-05
+beta3Year: 0.88
+fundFamily: SPDR State Street Global Advisors
+fundInceptionDate: 884649600
+legalType: Exchange Traded Fund
+threeYearAverageReturn: 0.0862119
+fiveYearAverageReturn: 0.118533894
+exchange: PCX
+quoteType: ETF
+symbol: DIA
+underlyingSymbol: DIA
+shortName: SPDR Dow Jones Industrial Avera
+longName: SPDR Dow Jones Industrial Average ETF Trust
+firstTradeDateEpochUtc: 885306600
+timeZoneFullName: America/New_York
+timeZoneShortName: EST
+uuid: 6c158591-4e0c-35b9-b97d-df821c43c9ab
+messageBoardId: finmb_6184218
+gmtOffSetMilliseconds: -18000000
+trailingPegRatio: None

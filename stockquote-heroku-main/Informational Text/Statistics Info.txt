@@ -1,0 +1,80 @@
+Valuation Measures
+marketCap: 2893363544064
+enterpriseValue: 3056746364928
+trailingPE: 30.39786
+forwardPE: 26.018866
+pegRatio: 4.77
+priceToSalesTrailing12Months: 7.5488567
+priceToBook: 46.543633
+Enterprise Value/Revenue = enterpriseValue: 3056746364928/totalRevenue: 383285002240 = 7.9751
+Enterprise Value/EBITDA = enterpriseValue: 3056746364928/EBITDA: 125820002304 = 24.2945
+
+Financial Highlights
+Fiscal Year
+Fiscal Year Ends lastFiscalYearEnd: 1696032000
+Most Recent Quarter (mrq): mostRecentQuarter: 1696032000
+
+Profitability
+profitMargins: 0.25305998
+operatingMargins: 0.30134
+
+Management Effectiveness
+returnOnAssets: 0.20256001
+returnOnEquity: 1.7195
+
+Income Statement
+totalRevenue: 383285002240
+revenuePerShare: 24.344
+revenueGrowth: -0.007
+grossProfits: 170782000000
+ebitda: 125820002304
+netIncomeToCommon: 96995000320
+trailingEps: 6.12
+earningsQuarterlyGrowth: 0.108
+
+Balance Sheet
+totalCash: 61554999296
+totalCashPerShare: 3.958
+totalDebt: 123930001408
+debtToEquity: 199.418
+currentRatio: 0.988
+bookValue: 3.997
+
+Cash Flow Statement
+operatingCashflow: 110543003648
+freeCashflow: 82179997696
+
+Trading Information
+Stock Price History
+beta: 1.308
+52WeekChange: 0.5393779
+SandP52WeekChange: 0.24729478
+fiftyTwoWeekHigh: 199.62
+fiftyTwoWeekLow: 124.17
+fiftyDayAverage: 186.6338
+twoHundredDayAverage: 179.4879
+
+Share Statistics
+averageVolume: 52950258
+averageVolume10days: 51425650
+impliedSharesOutstanding: 15639499776
+floatShares: 15535488445
+heldPercentInsiders: 0.00074
+heldPercentInstitutions: 0.61597997
+sharesShort: 120233720
+shortRatio: 2.29
+shortPercentOfFloat: 0.0077
+sharesPercentSharesOut: 0.0077
+sharesShortPriorMonth: 105837123
+
+Dividends & Splits
+dividendRate: 0.96
+dividendYield: 0.005
+trailingAnnualDividendRate: 0.94
+trailingAnnualDividendYield: 0.004882356
+fiveYearAvgDividendYield: 0.8
+payoutRatio: 0.1533
+lastDividendDate: 1699574400 (Will need to calculate.)
+exDividendDate: 1699574400
+lastSplitFactor: 4:1
+lastSplitDate: 1598832000
