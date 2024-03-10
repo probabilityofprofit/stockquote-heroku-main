@@ -1,0 +1,8 @@
+2024-02-02 09:24:44,841 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-02-02 09:24:46,010 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=AA&t=A&b=0&c=25 HTTP/1.1" 200 None
+2024-02-02 09:24:46,110 - INFO - Counts: AA 987
+2024-02-02 09:24:46,112 - INFO - Processing: AA0
+2024-02-02 09:24:46,116 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-02-02 09:24:47,425 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=AA&t=A&b=0&c=100 HTTP/1.1" 200 None
+2024-02-02 09:24:47,571 - WARNING - Couldn't find any search data 
+2024-02-02 09:24:47,576 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443

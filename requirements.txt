@@ -1,0 +1,7 @@
+streamlit
+yfinance
+yahooquery
+pandas
+plotly
+fuzzywuzzy
+timestamp
