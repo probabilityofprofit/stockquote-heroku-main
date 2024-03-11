@@ -29,6 +29,10 @@ from analysis_tab_utils import get_earnings_trend_data, display_earnings_trend_d
 from option_tab_utils import display_option_chain
 from stock_tickers import stock_options
 
+st.set_page_config(
+        page_title="My Page Title",
+)
+
 def get_stock_info(symbol):
     stock = yf.Ticker(symbol)
     info = stock.info
