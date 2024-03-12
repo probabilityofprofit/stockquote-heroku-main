@@ -33,10 +33,6 @@ from analysis_tab_utils import get_earnings_trend_data, display_earnings_trend_d
 from option_tab_utils import display_option_chain
 from stock_tickers import stock_options
 
-st.set_page_config(
-        page_title="POP • Stock Quote",
-)
-
 def modify_tag_content(tag_name, new_content):
     index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
     logging.info(f'editing {index_path}')
