@@ -1,5 +1,6 @@
 import streamlit as st
 import yfinance as yf
+import pathlib
 from yahooquery import Ticker
 import pandas as pd
 import plotly.graph_objects as go
