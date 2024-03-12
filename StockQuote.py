@@ -63,6 +63,10 @@ def modify_tag_content(tag_name, new_content):
 modify_tag_content('title', 'POP Stock Quote')
 modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks For Free.')
 
+st.set_page_config(
+        page_title="My Page Title",
+)
+
 def get_stock_info(symbol):
     stock = yf.Ticker(symbol)
     info = stock.info
