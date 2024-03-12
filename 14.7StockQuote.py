@@ -29,9 +29,39 @@ from analysis_tab_utils import get_earnings_trend_data, display_earnings_trend_d
 from option_tab_utils import display_option_chain
 from stock_tickers import stock_options
 
-st.set_page_config(
-        page_title="My Page Title",
-)
+# st.set_page_config(
+#         page_title="My Page Title",
+# )
+
+def modify_tag_content(tag_name, new_content):
+    index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
+    logging.info(f'editing {index_path}')
+    soup = BeautifulSoup(index_path.read_text(), features="html.parser")
+    
+    target_tag = soup.find(tag_name)  # find the target tag
+
+    if target_tag:  # if target tag exists
+        target_tag.string = new_content  # modify the tag content
+    else:  # if target tag doesn't exist, create a new one
+        target_tag = soup.new_tag(tag_name)
+        target_tag.string = new_content
+        try:
+            if tag_name in ['title', 'script', 'noscript'] and soup.head:
+                soup.head.append(target_tag)
+            elif soup.body:
+                soup.body.append(target_tag)
+        except AttributeError as e:
+            print(f"Error when trying to append {tag_name} tag: {e}")
+            return
+
+    # Save the changes
+    bck_index = index_path.with_suffix('.bck')
+    if not bck_index.exists():
+        shutil.copy(index_path, bck_index)  # keep a backup
+    index_path.write_text(str(soup))
+
+modify_tag_content('title', 'World Marathons Planner')
+modify_tag_content('noscript', 'Best Marathon Planner ! Browse through the event selection and discover your next Marathon challenge. Also get specific and personalized training plans.')
 
 def get_stock_info(symbol):
     stock = yf.Ticker(symbol)
