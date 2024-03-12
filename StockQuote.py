@@ -65,6 +65,7 @@ modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks F
 
 st.set_page_config(
         page_title="Stock Quote",
+        page_icon = 'PopFaviconBase.png',
 )
 
 def get_stock_info(symbol):
