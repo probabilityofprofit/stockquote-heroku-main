@@ -64,7 +64,7 @@ def modify_tag_content(tag_name, new_content):
         shutil.copy(index_path, bck_index)  # keep a backup
     index_path.write_text(str(soup))
 
-modify_tag_content('title', 'POP • Stock Quote')
+modify_tag_content('title', 'POP | Stock Quote')
 modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks For Free.')
 
 def get_stock_info(symbol):
