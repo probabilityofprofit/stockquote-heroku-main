@@ -33,9 +33,9 @@ from analysis_tab_utils import get_earnings_trend_data, display_earnings_trend_d
 from option_tab_utils import display_option_chain
 from stock_tickers import stock_options
 
-# st.set_page_config(
-#         page_title="My Page Title",
-# )
+st.set_page_config(
+        page_title="POP • Stock Quote",
+)
 
 def modify_tag_content(tag_name, new_content):
     index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
@@ -64,8 +64,8 @@ def modify_tag_content(tag_name, new_content):
         shutil.copy(index_path, bck_index)  # keep a backup
     index_path.write_text(str(soup))
 
-modify_tag_content('title', 'World Marathons Planner')
-modify_tag_content('noscript', 'Best Marathon Planner ! Browse through the event selection and discover your next Marathon challenge. Also get specific and personalized training plans.')
+modify_tag_content('title', 'POP • Stock Quote')
+modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks For Free.')
 
 def get_stock_info(symbol):
     stock = yf.Ticker(symbol)
