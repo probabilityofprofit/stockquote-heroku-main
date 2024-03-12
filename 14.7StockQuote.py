@@ -2,6 +2,7 @@ import streamlit as st
 import yfinance as yf
 import pathlib
 import logging
+from bs4 import BeautifulSoup
 from yahooquery import Ticker
 import pandas as pd
 import plotly.graph_objects as go
