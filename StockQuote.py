@@ -64,7 +64,7 @@ modify_tag_content('title', 'POP Stock Quote')
 modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks For Free.')
 
 st.set_page_config(
-        page_title="My Page Title",
+        page_title="POP Stock Quote",
 )
 
 def get_stock_info(symbol):
