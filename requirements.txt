@@ -6,3 +6,4 @@ plotly
 fuzzywuzzy
 timestamp
 pathlib
+logging
