@@ -37,7 +37,7 @@ def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.p
     index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
     logging.info(f'editing {index_path}')
     soup = BeautifulSoup(index_path.read_text(), features="html.parser")
-
+    
     target_tag = soup.find(tag_name)  # find the target tag
 
     if tag_name == 'link' and 'rel' in new_content.lower() and 'icon' in new_content.lower():
@@ -75,11 +75,9 @@ modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks F
 modify_tag_content('link', '', favicon_filename='PopFaviconBase.png')
 
 st.set_page_config(
-    page_title="Stock Quote",
-    page_icon='PopFaviconBase1.png',
+        page_title="Stock Quote",
+        page_icon = 'PopFaviconBase1.png',
 )
-
-
 
 hide_decoration_bar_style = '''
     <style>
