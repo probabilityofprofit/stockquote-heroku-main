@@ -33,7 +33,7 @@ from analysis_tab_utils import get_earnings_trend_data, display_earnings_trend_d
 from option_tab_utils import display_option_chain
 from stock_tickers import stock_options
 
-ddef modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.png', page_icon=None):
+def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.png', page_icon=None):
     index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
     logging.info(f'editing {index_path}')
     soup = BeautifulSoup(index_path.read_text(), features="html.parser")
