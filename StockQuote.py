@@ -68,20 +68,12 @@ st.set_page_config(
         page_icon = 'PopFaviconBase.png',
 )
 
-hide_streamlit_style = """
-<style>
-div[data-testid="stToolbar"],
-div[data-testid="stDecoration"],
-div[data-testid="stStatusWidget"],
-#MainMenu,
-header,
-footer {
-    visibility: hidden;
-    height: 0%;
-    position: fixed;
-}
-</style>
-"""
+hide_decoration_bar_style = '''
+    <style>
+        header {visibility: hidden;}
+    </style>
+'''
+st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
 
 
 def get_stock_info(symbol):
