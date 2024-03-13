@@ -364,7 +364,7 @@ def main():
     query_params = st.query_params
 
     # Extract the symbol from the query parameters
-    symbol = query_params.get("symbol", [""])[0].upper()
+    symbol = query_params.get("symbol", [""])[0].upper() if query_params else ""
 
     # st.title("Stock Quote")
 
