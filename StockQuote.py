@@ -480,7 +480,7 @@ def main():
                             '5d': {'interval': '15m', 'period': '5d'},
                             '1mo': {'interval': '30m', 'period': '1mo'},
                             '6mo': {'interval': '1d', 'period': '6mo'},
-                            'ytd': {'interval': '30m', 'period': 'ytd'},
+                            'ytd': {'interval': '1d', 'period': 'ytd'},
                             '1y': {'interval': '1d', 'period': '1y'},
                             '5y': {'interval': '1wk', 'period': '5y'},
                             'max': {'interval': '1mo', 'period': 'max'}
