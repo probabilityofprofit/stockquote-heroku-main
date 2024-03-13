@@ -361,7 +361,7 @@ def find_related_options(user_input, limit=5):
 
 def main():
     # Get query parameters from the URL
-    query_params = st.experimental_get_query_params()
+    query_params = st.query_params()
 
     # Extract the symbol from the query parameters
     symbol = query_params.get("symbol", [""])[0].upper()
@@ -379,7 +379,7 @@ def main():
         st.warning("Invalid stock symbol. Please choose from the list.")
 
     # Update query params if the user enters input into the st.text_input
-    st.experimental_set_query_params(symbol=symbol)
+    st.query_params(symbol=symbol)
 
     # Find related options based on user input
     related_options = find_related_options(symbol)
@@ -389,7 +389,7 @@ def main():
         if st.button(f"{option} - {full_name}"):
             # Update selected symbol if the button is clicked
             symbol = option
-            st.experimental_set_query_params(symbol=symbol)
+            st.query_params(symbol=symbol)
             # st.write(f"Selected Stock Symbol: {symbol} - {full_name}")
 
             symbol_valid = True  # Set the flag to indicate a valid symbol
