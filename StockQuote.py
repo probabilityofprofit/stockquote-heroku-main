@@ -33,7 +33,7 @@ from analysis_tab_utils import get_earnings_trend_data, display_earnings_trend_d
 from option_tab_utils import display_option_chain
 from stock_tickers import stock_options
 
-def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.png', page_icon=None):
+def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.png'):
     index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
     logging.info(f'editing {index_path}')
     soup = BeautifulSoup(index_path.read_text(), features="html.parser")
@@ -63,10 +63,6 @@ def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.p
             print(f"Error when trying to append {tag_name} tag: {e}")
             return
 
-    # Update Streamlit page icon
-    if page_icon:
-        st.set_page_config(page_icon=page_icon)
-
     # Save the changes
     bck_index = index_path.with_suffix('.bck')
     if not bck_index.exists():
@@ -74,9 +70,14 @@ def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.p
     index_path.write_text(str(soup))
 
 # Example usage with modifying the title and favicon
-modify_tag_content('title', 'POP Stock Quote', favicon_filename='PopFaviconBase.png', page_icon='PopFaviconBase1.png')
-modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks For Free.', favicon_filename='PopFaviconBase.png', page_icon='PopFaviconBase1.png')
+modify_tag_content('title', 'POP Stock Quote')
+modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks For Free.')
+modify_tag_content('link', '', favicon_filename='PopFaviconBase.png')
 
+st.set_page_config(
+        page_title="Stock Quote",
+        page_icon = None,
+)
 
 hide_decoration_bar_style = '''
     <style>
