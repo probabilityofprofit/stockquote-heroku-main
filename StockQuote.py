@@ -68,6 +68,22 @@ st.set_page_config(
         page_icon = 'PopFaviconBase.png',
 )
 
+hide_streamlit_style = """
+<style>
+div[data-testid="stToolbar"],
+div[data-testid="stDecoration"],
+div[data-testid="stStatusWidget"],
+#MainMenu,
+header,
+footer {
+    visibility: hidden;
+    height: 0%;
+    position: fixed;
+}
+</style>
+"""
+
+
 def get_stock_info(symbol):
     stock = yf.Ticker(symbol)
     info = stock.info
