@@ -33,7 +33,7 @@ from analysis_tab_utils import get_earnings_trend_data, display_earnings_trend_d
 from option_tab_utils import display_option_chain
 from stock_tickers import stock_options
 
-def modify_tag_content(tag_name, new_content, favicon_filenames=['PopFaviconBase.png']):
+def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.png'):
     index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
     logging.info(f'editing {index_path}')
     soup = BeautifulSoup(index_path.read_text(), features="html.parser")
@@ -42,15 +42,11 @@ def modify_tag_content(tag_name, new_content, favicon_filenames=['PopFaviconBase
 
     if tag_name == 'link' and 'rel' in new_content.lower() and 'icon' in new_content.lower():
         # Modify or add favicon link tag
-        favicon_tags = soup.find_all('link', {'rel': 'icon'})
-        
-        # Remove existing favicon tags
-        for tag in favicon_tags:
-            tag.decompose()
-
-        # Add new favicon tags
-        for filename in favicon_filenames:
-            favicon_tag = soup.new_tag('link', rel='icon', type='image/png', href=filename)
+        favicon_tag = soup.find('link', {'rel': 'icon'})
+        if favicon_tag:
+            favicon_tag['href'] = favicon_filename
+        else:
+            favicon_tag = soup.new_tag('link', rel='icon', type='image/png', href=favicon_filename)
             if soup.head:
                 soup.head.append(favicon_tag)
     elif target_tag:  # if target tag exists
@@ -76,13 +72,12 @@ def modify_tag_content(tag_name, new_content, favicon_filenames=['PopFaviconBase
 # Example usage with modifying the title and favicon
 modify_tag_content('title', 'POP Stock Quote')
 modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks For Free.')
-modify_tag_content('link', '', favicon_filenames=['PopFaviconBase.png', 'PopFaviconBase1.png'])
+modify_tag_content('link', '', favicon_filename='PopFaviconBase.png')
 
 st.set_page_config(
-    page_title="Stock Quote",
-    page_icon='PopFaviconBase1.png',
+        page_title="Stock Quote",
+        page_icon = 'PopFaviconBase1.png',
 )
-
 
 hide_decoration_bar_style = '''
     <style>
