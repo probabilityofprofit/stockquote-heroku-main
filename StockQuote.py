@@ -34,7 +34,7 @@ from option_tab_utils import display_option_chain
 from stock_tickers import stock_options
 st.set_page_config(
         page_title="Stock Quote",
-        page_icon = 'PopFaviconBase.png',
+        page_icon = 'PopFaviconBase1.png',
 )
 def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.png'):
     index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
