@@ -7,7 +7,7 @@ enableCORS = false\n\
 headless = true\n\
 \n\
 [ui]\n\
-hideTopBar = true\n\
+hide_top_bar = true\n\
 \n\
 [client]\n\
 toolbarMode = \"minimal\"\n\
