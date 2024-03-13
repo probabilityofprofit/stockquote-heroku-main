@@ -33,14 +33,23 @@ from analysis_tab_utils import get_earnings_trend_data, display_earnings_trend_d
 from option_tab_utils import display_option_chain
 from stock_tickers import stock_options
 
-def modify_tag_content(tag_name, new_content):
-    index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
+def modify_tag_content(tag_name, new_content, favicon_name=None):
+    index_path = pathlib.Path(__file__).parent / "static" / "index.html"
     logging.info(f'editing {index_path}')
     soup = BeautifulSoup(index_path.read_text(), features="html.parser")
-    
+
     target_tag = soup.find(tag_name)  # find the target tag
 
-    if target_tag:  # if target tag exists
+    if tag_name == 'link' and 'rel' in new_content.lower() and 'icon' in new_content.lower():
+        # Modify or add favicon link tag
+        favicon_tag = soup.find('link', {'rel': 'icon'})
+        if favicon_tag:
+            favicon_tag['href'] = favicon_name
+        else:
+            favicon_tag = soup.new_tag('link', rel='icon', type='image/png', href=favicon_name)
+            if soup.head:
+                soup.head.append(favicon_tag)
+    elif target_tag:  # if target tag exists
         target_tag.string = new_content  # modify the tag content
     else:  # if target tag doesn't exist, create a new one
         target_tag = soup.new_tag(tag_name)
@@ -60,8 +69,11 @@ def modify_tag_content(tag_name, new_content):
         shutil.copy(index_path, bck_index)  # keep a backup
     index_path.write_text(str(soup))
 
+# Example usage with modifying the title and favicon
 modify_tag_content('title', 'POP Stock Quote')
-modify_tag_content('noscript', 'Best Stock Quotes ! Browse Thousands of Stocks For Free.')
+modify_tag_content('noscript', 'Best Stock Quotes! Browse Thousands of Stocks For Free.')
+modify_tag_content('link', '', favicon_name='PopFaviconBase.png')
+
 
 st.set_page_config(
         page_title="Stock Quote",
