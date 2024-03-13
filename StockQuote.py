@@ -77,7 +77,7 @@ modify_tag_content('link', '', favicon_filename='PopFaviconBase.png')
 
 st.set_page_config(
         page_title="Stock Quote",
-        page_icon='PopFaviconBase1.png',
+        page_icon='logotest.png',
 )
 
 
