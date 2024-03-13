@@ -37,8 +37,6 @@ def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.p
     index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
     logging.info(f'editing {index_path}')
     soup = BeautifulSoup(index_path.read_text(), features="html.parser")
-    
-    target_tag = soup.find(tag_name)  # find the target tag
 
     if tag_name == 'link' and 'rel' in new_content.lower() and 'icon' in new_content.lower():
         # Modify or add favicon link tag
@@ -49,19 +47,22 @@ def modify_tag_content(tag_name, new_content, favicon_filename='PopFaviconBase.p
             favicon_tag = soup.new_tag('link', rel='icon', type='image/png', href=favicon_filename)
             if soup.head:
                 soup.head.append(favicon_tag)
-    elif target_tag:  # if target tag exists
-        target_tag.string = new_content  # modify the tag content
-    else:  # if target tag doesn't exist, create a new one
-        target_tag = soup.new_tag(tag_name)
-        target_tag.string = new_content
-        try:
-            if tag_name in ['title', 'script', 'noscript'] and soup.head:
-                soup.head.append(target_tag)
-            elif soup.body:
-                soup.body.append(target_tag)
-        except AttributeError as e:
-            print(f"Error when trying to append {tag_name} tag: {e}")
-            return
+    else:
+        target_tag = soup.find(tag_name)  # find the target tag
+
+        if target_tag:  # if target tag exists
+            target_tag.string = new_content  # modify the tag content
+        else:  # if target tag doesn't exist, create a new one
+            target_tag = soup.new_tag(tag_name)
+            target_tag.string = new_content
+            try:
+                if tag_name in ['title', 'script', 'noscript'] and soup.head:
+                    soup.head.append(target_tag)
+                elif soup.body:
+                    soup.body.append(target_tag)
+            except AttributeError as e:
+                print(f"Error when trying to append {tag_name} tag: {e}")
+                return
 
     # Save the changes
     bck_index = index_path.with_suffix('.bck')
@@ -76,8 +77,9 @@ modify_tag_content('link', '', favicon_filename='PopFaviconBase.png')
 
 st.set_page_config(
         page_title="Stock Quote",
-        page_icon = 'PopFaviconBase1.png',
+        page_icon='PopFaviconBase1.png',
 )
+
 
 hide_decoration_bar_style = '''
     <style>
